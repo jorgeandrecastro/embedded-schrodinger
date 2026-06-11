@@ -1,0 +1,24 @@
+[package]
+name = "embedded-schrodinger"
+version = "0.1.0"
+edition = "2024"
+authors = ["Jorge Andre Castro <georgeandrec@gmail.com>"]
+description = "Solveur de l'équation de Schrödinger unidimensionnelle en no_std et sans libm"
+license = "GPL-2.0-only"
+repository = "https://github.com/jorgeandrecastro/embedded-schrodinger"
+keywords = ["schrodinger", "physics", "no-std", "embedded", "quantum"]
+categories = ["science", "no-std", "embedded"]
+readme = "README.md"
+documentation = "https://docs.rs/embedded-schrodinger"
+
+[dependencies]
+embedded-f32-sqrt = "0.2.0"
+
+[dev-dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
